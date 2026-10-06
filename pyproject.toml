@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "share-claude"
+version = "0.1.0"
+description = "Export and import a Claude Code login using an AES-encrypted ZIP archive"
+requires-python = ">=3.10"
+dependencies = ["pyzipper>=0.3.6,<1"]
+
+[project.scripts]
+share-claude = "share_claude.cli:main"
+
+[tool.setuptools.package-data]
+share_claude = ["keychain.swift"]
